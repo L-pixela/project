@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -33,15 +36,15 @@ use Illuminate\Support\Facades\Route;
         return 'Here are the acedemic of our page!!!';
     })->name('acedemic');
 
-// Route::get('/', function () {
-//     return 'Welcome to the homepage!';
-//    })->name('home');
-//    Route::get('/about', function () {
-//     return 'About Us';
-//    })->name('about');
-//    Route::get('/contact/{name}', function ($name) {
-//     return 'Contact ' . $name;
-//    })->name('contact');
+Route::get('/', function () {
+    return 'Welcome to the homepage!';
+   })->name('home');
+   Route::get('/about', function () {
+    return 'About Us';
+   })->name('about');
+   Route::get('/contact/{name}', function ($name) {
+    return 'Contact ' . $name;
+   })->name('contact');
 
    Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -60,3 +63,40 @@ use Illuminate\Support\Facades\Route;
    Route::get('/contact', function () {
     return view('contact');
    });
+
+   Route::get('/posts', function () {
+    $posts = [
+    ['title' => 'Post 1', 'content' => 'Content for post 1'],
+    ['title' => 'Post 2', 'content' => 'Content for post 2'],
+    ['title' => 'Post 3', 'content' => 'Content for post 3'],
+    ];
+    return view('posts', ['posts' => $posts]);
+   });
+
+   Route::get('/products/{id}', function ($id) {
+ $product = [
+ 'id' => $id,
+ 'name' => 'Product ' . $id,
+ 'description' => 'Description for product ' . $id,
+ 'price' => 100,
+ ];
+ return view('product', ['product' => $product]);
+});
+
+
+    Route::get('/', function () {
+    return view('home');
+    });
+    Route::get('/home',function (){
+        return view('home');
+    });
+    Route::get('/about', function () {
+    return view('about');
+    });
+    Route::get('/contact', function () {
+    return view('contact');
+    }); 
+
+    Route::get('/', [FrontendController::class, 'home']);
+    Route::get('/about', [FrontendController::class, 'about']);
+    Route::get('/contact', [FrontendController::class, 'contact']);
