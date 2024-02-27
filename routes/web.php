@@ -33,15 +33,15 @@ use Illuminate\Support\Facades\Route;
         return 'Here are the acedemic of our page!!!';
     })->name('acedemic');
 
-Route::get('/', function () {
-    return 'Welcome to the homepage!';
-   })->name('home');
-   Route::get('/about', function () {
-    return 'About Us';
-   })->name('about');
-   Route::get('/contact/{name}', function ($name) {
-    return 'Contact ' . $name;
-   })->name('contact');
+// Route::get('/', function () {
+//     return 'Welcome to the homepage!';
+//    })->name('home');
+//    Route::get('/about', function () {
+//     return 'About Us';
+//    })->name('about');
+//    Route::get('/contact/{name}', function ($name) {
+//     return 'Contact ' . $name;
+//    })->name('contact');
 
    Route::prefix('admin')->group(function () {
     Route::get('/', function () {
@@ -52,6 +52,11 @@ Route::get('/', function () {
     })->name('admin.users');
    });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+   Route::get('/about', function () {
+    return view('about');
+   });
+
+
+   Route::get('/contact', function () {
+    return view('contact');
+   });
