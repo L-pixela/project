@@ -16,44 +16,44 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-    Route::get('/users',function (){
-        return 'Welcome Users to our page!!!';
-    })->name('users');
+    // Route::get('/users',function (){
+    //     return 'Welcome Users to our page!!!';
+    // })->name('users');
 
-    Route::get('/students',function (){
-        return 'Welcome Students to our page!!!';
-    })->name('students');
+    // Route::get('/students',function (){
+    //     return 'Welcome Students to our page!!!';
+    // })->name('students');
 
-    Route::get('/teacher',function (){
-        return 'Welcome Teacher to our page!!!';
-    })->name('teacher');
+    // Route::get('/teacher',function (){
+    //     return 'Welcome Teacher to our page!!!';
+    // })->name('teacher');
 
-    Route::get('/subject',function (){
-        return 'Here are the Subject of our page!!!';
-    })->name('subject');
+    // Route::get('/subject',function (){
+    //     return 'Here are the Subject of our page!!!';
+    // })->name('subject');
 
-    Route::get('/acedemic',function (){
-        return 'Here are the acedemic of our page!!!';
-    })->name('acedemic');
+    // Route::get('/acedemic',function (){
+    //     return 'Here are the acedemic of our page!!!';
+    // })->name('acedemic');
 
-Route::get('/', function () {
-    return 'Welcome to the homepage!';
-   })->name('home');
-   Route::get('/about', function () {
-    return 'About Us';
-   })->name('about');
-   Route::get('/contact/{name}', function ($name) {
-    return 'Contact ' . $name;
-   })->name('contact');
+// Route::get('/', function () {
+//     return 'Welcome to the homepage!';
+//    })->name('home');
+//    Route::get('/about', function () {
+//     return 'About Us';
+//    })->name('about');
+//    Route::get('/contact/{name}', function ($name) {
+//     return 'Contact ' . $name;
+//    })->name('contact');
 
-   Route::prefix('admin')->group(function () {
-    Route::get('/', function () {
-    return 'Admin Dashboard';
-    })->name('admin.dashboard');
-    Route::get('/users', function () {
-    return 'Admin Users';
-    })->name('admin.users');
-   });
+//    Route::prefix('admin')->group(function () {
+//     Route::get('/', function () {
+//     return 'Admin Dashboard';
+//     })->name('admin.dashboard');
+//     Route::get('/users', function () {
+//     return 'Admin Users';
+//     })->name('admin.users');
+//    });
 
    Route::get('/about', function () {
     return view('about');
@@ -84,19 +84,21 @@ Route::get('/', function () {
 });
 
 
-    Route::get('/', function () {
-    return view('home');
-    });
-    Route::get('/home',function (){
-        return view('home');
-    });
-    Route::get('/about', function () {
-    return view('about');
-    });
-    Route::get('/contact', function () {
-    return view('contact');
-    }); 
+    // Route::get('/', function () {
+    // return view('home');
+    // });
+    // Route::get('/home',function (){
+    //     return view('home');
+    // });
+    // Route::get('/about', function () {
+    // return view('about');
+    // });
+    // Route::get('/contact', function () {
+    // return view('contact');
+    // }); 
 
     Route::get('/', [FrontendController::class, 'home']);
     Route::get('/about', [FrontendController::class, 'about']);
     Route::get('/contact', [FrontendController::class, 'contact']);
+
+    
