@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+    Route::get('/users',function (){
+        return 'Welcome Users to our page!!!';
+    })->name('users');
+
+    Route::get('/students',function (){
+        return 'Welcome Students to our page!!!';
+    })->name('students');
+
+    Route::get('/teacher',function (){
+        return 'Welcome Teacher to our page!!!';
+    })->name('teacher');
+
+    Route::get('/subject',function (){
+        return 'Here are the Subject of our page!!!';
+    })->name('subject');
+
+    Route::get('/acedemic',function (){
+        return 'Here are the acedemic of our page!!!';
+    })->name('acedemic');
+
 Route::get('/', function () {
     return 'Welcome to the homepage!';
    })->name('home');
